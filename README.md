@@ -1,23 +1,51 @@
 # Mobile Programming Homework Repository
 
-Welcome to the Mobile Programming Homework Repository! This repository is dedicated to learning and practicing Kotlin syntax through various assignments and exercises.
-
-## Description
-
-This repository contains homework assignments and practice exercises for mobile programming using Kotlin. Each assignment focuses on different aspects of Kotlin programming and mobile development.
+Welcome! This repo contains homework assignments for Mobile Programming. It now includes both a Kotlin (HW1) project and a Swift (HW2) command-line app.
 
 ## Contents
 
-- **hw1**: The first homework assignment that introduces basic Kotlin syntax and constructs. This includes variables, data types, control flow, and functions. Follow the instructions in the `hw1` directory to complete the assignment.
-
-## Language
-
-This repository is entirely written in Kotlin.
+- HW1 (Kotlin/JVM): Console app that fetches GitHub user info and repositories (Retrofit + Coroutines). Source in `HW1/src/main/kotlin`.
+- HW2 (Swift): Mastermind CLI game that talks to an online API (`https://mastermind.darkube.app`). Entry point at `HW2/main.swift`.
 
 ## Getting Started
 
-To get started with the assignments and exercises in this repository, follow these steps:
+1. Clone the repo
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/saj306/mobile-programming-HWs.git
+```powershell
+git clone https://github.com/saj306/mobile-programming-hw1.git
+cd mobile-programming-hw1
+```
+
+2. Run HW1 (Kotlin)
+
+Build with Gradle Wrapper:
+
+```powershell
+cd HW1/HW1
+.\gradlew.bat clean build
+```
+
+Run options:
+
+- Recommended: Open the `HW1` project in IntelliJ IDEA or VS Code (with Kotlin) and run `project.MainKt`.
+- Or add the Gradle Application plugin and a `mainClass` to enable `gradlew run` (optional).
+
+3. Run HW2 (Swift)
+
+Compile and run the CLI:
+
+```powershell
+cd ..\HW2
+swiftc main.swift -o Mastermind.exe
+.\Mastermind.exe
+```
+
+When it starts:
+
+- Enter 4 digits (each 1–6). B = correct digit+position, W = correct digit wrong position.
+- Type `exit` to end the game (it will clean up the game on the server).
+
+## Notes
+
+- HW1 targets JVM with Kotlin 2.1.x and requires JDK 21. If Gradle can’t find Java, set `JAVA_HOME` to your JDK 21 path in Windows.
+- HW2 is a single-file Swift app; no SwiftPM package is required. You can also run it directly with `swift main.swift` if your Swift install supports it.
